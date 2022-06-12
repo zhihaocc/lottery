@@ -1,0 +1,16 @@
+server:
+  port: 2022
+
+spring:
+  datasource:
+    username: root
+    password: Zhihao168.
+    url: jdbc:mysql://43.142.136.132:3306/lottery?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:com/lottery/app/mapper/**/impl/*.xml
+  type-aliases-package: com.lottery.app.pojo
+  map-underscore-to-camel-case: true
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lottery.app.mapper.user.UserMapper">
+
+    <resultMap id="treeMap" type="com.lottery.app.pojo.dto.TreeDTO">
+        <result column="id1" property="id"/>
+        <result column="name1" property="name"/>
+        <result column="pid1" property="pid"/>
+        <collection property="children" ofType="com.lottery.app.pojo.dto.TreeDTO">
+            <result column="id2" property="id"/>
+            <result column="name2" property="name"/>
+            <result column="pid2" property="pid"/>
+        </collection>
+    </resultMap>
+
+    <select id="getUser" resultType="map">
+        select * from users
+    </select>
+
+    <select id="selectTreeList" resultType="com.lottery.app.config.Test2">
+        select * from tree order by `order` desc
+    </select>
+
+    <select id="getTree" resultMap="treeMap">
+        SELECT
+            tree1.id AS id1,
+            tree1.NAME AS name1,
+            tree1.pid AS pid1,
+
+            tree2.id AS id2,
+            tree2.NAME AS name2,
+            tree2.pid AS pid2
+        FROM
+            tree tree1
+            LEFT JOIN tree tree2 ON tree2.pid = tree1.id
+            where tree1.pid = '0'
+--             and tree2.name like CONCAT('%', '南', '%')
+        ORDER BY
+            tree2.id
+    </select>
+</mapper>
