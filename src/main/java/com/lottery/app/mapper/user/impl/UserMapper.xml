@@ -17,7 +17,7 @@
         select * from users
     </select>
 
-    <select id="selectTreeList" resultType="com.lottery.app.config.Test2">
+    <select id="selectTreeList" resultType="com.lottery.app.pojo.dto.TreeDTO">
         select * from tree order by `order` desc
     </select>
 

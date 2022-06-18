@@ -8,9 +8,18 @@ spring:
     url: jdbc:mysql://43.142.136.132:3306/lottery?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
 
-mybatis:
+#mybatis:
+#  mapper-locations: classpath:com/lottery/app/mapper/**/impl/*.xml
+#  type-aliases-package: com.lottery.app.pojo
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# mybatis-plus配置
+mybatis-plus:
   mapper-locations: classpath:com/lottery/app/mapper/**/impl/*.xml
-  type-aliases-package: com.lottery.app.pojo
-  map-underscore-to-camel-case: true
+  type-enums-package: com.lottery.resource.**
   configuration:
+    jdbc-type-for-null: varchar
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
