@@ -3,7 +3,7 @@ package com.lottery.app.service.test;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lottery.app.mapper.user.UserMapper;
 import com.lottery.app.pojo.dto.TreeDTO;
-import com.lottery.app.util.PageUtils;
+import com.lottery.app.util.page.PageUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
