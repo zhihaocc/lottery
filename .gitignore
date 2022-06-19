@@ -1,0 +1,13 @@
+# Maven #
+target/
+# IDEA #
+.idea/*
+*.iml
+pid.txt
+.idea
+/.idea/*
+/.idea/sonarlint
+/.idea/sonarlint/issuestore/*
+/.idea/sonarlint/issuestore/*.pb
+targetjar/
+targetJar/*

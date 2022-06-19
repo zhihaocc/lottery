@@ -8,10 +8,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @MapperScan(basePackages = "com.lottery.app.mapper")
 @EnableSwagger2
-public class AppApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
