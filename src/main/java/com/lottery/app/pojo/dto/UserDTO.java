@@ -5,16 +5,15 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
-@ApiModel(value = "用户查询", description = "用户查询")
+@ApiModel(value = "用户信息", description = "用户信息")
 public class UserDTO {
+    @ApiModelProperty(value = "账户名")
+    private String userName;
 
-    @ApiModelProperty(value = "用户编号")
-    private String userNum;
-
-    @ApiModelProperty(value = "密码")
+    @ApiModelProperty(value = "账户密码")
     private String password;
 
-    @ApiModelProperty(value = "用户名")
-    private String userName;
+    @ApiModelProperty(value = "昵称")
+    private String nickname;
 
 }

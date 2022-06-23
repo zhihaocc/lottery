@@ -2,6 +2,7 @@ package com.lottery.app.service.user.impl;
 
 import com.lottery.app.mapper.user.UserMapper;
 import com.lottery.app.pojo.dto.TreeDTO;
+import com.lottery.app.pojo.dto.UserDTO;
 import com.lottery.app.service.user.UserService;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Override
-    public HashMap<String, String> getUser() {
+    public List<UserDTO> getUser() {
         return userMapper.getUser();
     }
 

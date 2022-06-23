@@ -1,31 +1,29 @@
 package com.lottery.app.controller.user;
 
 import com.lottery.app.pojo.dto.TreeDTO;
+import com.lottery.app.pojo.dto.UserDTO;
 import com.lottery.app.service.user.UserService;
+import com.lottery.app.util.response.R;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 
 @RestController
-@Api(value = "app接口类", tags = "app接口类")
+@Api(value = "主入口", tags = "主入口")
 @RequestMapping(value = "/lot")
 public class UserController {
     @Resource
     UserService userService;
 
-    @RequestMapping(value = "/getUser")
-    @ApiOperation(value = "统一访问接口", notes = "统一访问接口")
+    @PostMapping(value = "/getUser")
+    @ApiOperation(value = "获取用户信息", notes = "获取用户信息")
     @ResponseBody
-    public HashMap<String,String> getUser(){
+    public R<List<UserDTO>> getUser(){
 
-        return userService.getUser();
+        return R.data(userService.getUser());
     }
 
     @RequestMapping(value = "/getTree")

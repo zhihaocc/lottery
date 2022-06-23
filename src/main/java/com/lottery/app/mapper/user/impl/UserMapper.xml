@@ -13,7 +13,7 @@
         </collection>
     </resultMap>
 
-    <select id="getUser" resultType="map">
+    <select id="getUser" resultType="com.lottery.app.pojo.dto.UserDTO">
         select * from users
     </select>
 

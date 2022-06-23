@@ -20,6 +20,8 @@ mybatis-plus:
   mapper-locations: classpath:com/lottery/app/mapper/**/impl/*.xml
   type-enums-package: com.lottery.resource.**
   configuration:
+#    自动驼峰命名映射
+    map-underscore-to-camel-case: true
     jdbc-type-for-null: varchar
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

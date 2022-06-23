@@ -1,4 +1,4 @@
-package com.lottery.app.controller.text;
+package com.lottery.app.controller.test;
 
 import com.lottery.app.service.test.Test2Service;
 import com.lottery.app.pojo.dto.TreeDTO;
