@@ -3,10 +3,14 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: Zhihao168.
+    username: ENC(0BMzbuaUw5z2EpEv4OlOEQ==)
+    password: ENC(BcF5eHlmn0zPifSeu8WLO/0iaWh8qF7Z)
     url: jdbc:mysql://43.142.136.132:3306/lottery?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+
     driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
 
 #mybatis:
 #  mapper-locations: classpath:com/lottery/app/mapper/**/impl/*.xml

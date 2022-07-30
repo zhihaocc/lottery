@@ -5,9 +5,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +26,10 @@ public class LotnumController {
      */
     @RequestMapping("/getNumber")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "type", value = "获取类别(1 双色球 2大乐透)", required = true,paramType = "json"),
-            @ApiImplicitParam(name = "listNum", value = "获取几组,默认1",paramType = "json")
+            @ApiImplicitParam(name = "type", value = "获取类别(1 双色球 2大乐透)",dataType="Integer", required = true,paramType = "query"),
+            @ApiImplicitParam(name = "listNum", value = "获取几组,默认1",dataType="Integer",paramType = "query")
     })
-    public R<List<String>> getNum(Integer type, Integer listNum) {
+    public R<List<String>> getNum( Integer type,   Integer listNum) {
         listNum = listNum==null || listNum == 0 ? 1 : listNum;
         if (listNum > 100){
             return R.fail("最多获取100组号码！");
